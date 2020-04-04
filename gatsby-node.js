@@ -7,9 +7,7 @@ exports.onCreateNode = ({ node, actions, getNode }) => {
   // remote CMS you could also check to see if the parent node was a
   // `File` node here
   if (node.internal.type === "Mdx") {
-    const value = createFilePath({ node, getNode })
-    // console.log('node', node);
-    // console.log('value', value)
+    const value = createFilePath({ node, getNode });
     createNodeField({
       // Name of the field you are adding
       name: "slug",
@@ -18,7 +16,7 @@ exports.onCreateNode = ({ node, actions, getNode }) => {
       // Generated value based on filepath with "blog" prefix. you
       // don't need a separating "/" before the value because
       // createFilePath returns a path with the leading "/".
-      value: `${value}`,
+      value: node.frontmatter.path || value,
     })
   }
 }
@@ -35,9 +33,6 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
             id
             fields {
               slug
-            }
-            frontmatter {
-              path
             }
           }
         }
@@ -59,7 +54,7 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
       // This is the slug you created before
       // (or `node.frontmatter.slug`)
       // path: node.frontmatter.path || node.fields.slug,
-      path: node.frontmatter.path || node.fields.slug,
+      path: node.fields.slug,
       // path: 'everyhign'
       // This component will wrap our MDX content
       component: path.resolve(`./src/components/mdx-layout.js`),
