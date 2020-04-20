@@ -12,7 +12,7 @@ Inline `code` expression
 
 Or a code block
 
-```js
+```javascript
 Array(5).map((_, index) => console.log(Array(index+2).join('*')));
 ```
 
@@ -28,6 +28,12 @@ No effing way, do checkboxes really work?
 - [ ] A task not completed
 - [x] Yay! this is completed
 
-### Shell prompt
+```js
+import { open } from '@colony/purser-ledger'
 
-```bash{outputLines: 2-10,12}
+const wallet = await open();
+
+await wallet.setDefaultAddress(12); // Optional - Select another address from the ones available
+
+console.log(wallet); // { address: '...', otherAddrresses: [...], publicKey: '...' }
+```

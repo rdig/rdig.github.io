@@ -34,7 +34,24 @@ module.exports = {
         path: `${__dirname}/src/pages/`,
       },
     },
-    `gatsby-plugin-mdx`,
+    {
+      resolve: `gatsby-plugin-mdx`,
+      options: {
+        extensions: ['.mdx', '.md'],
+        gatsbyRemarkPlugins: [
+          {
+            resolve: 'gatsby-remark-images',
+            options: {
+              maxWidth: 1000,
+              sizeByPixelDensity: true,
+            },
+          },
+          {
+            resolve: 'gatsby-remark-vscode'
+          }
+        ],
+      },
+    },
     {
       resolve: `gatsby-source-filesystem`,
       options: {
