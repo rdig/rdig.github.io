@@ -1,11 +1,16 @@
 import React from "react"
 // import { Link } from "gatsby"
+import { graphql } from "gatsby"
 
 import Layout from "../components/layout"
 // import Image from "../components/image"
 import SEO from "../components/seo"
 
-const IndexPage = ({ data }) => {
+interface Props {
+  data: any;
+};
+
+const IndexPage = ({ data }: Props) => {
   const { edges: posts } = data.allMdx
 
   return <Layout><SEO title="Home" /></Layout>;
@@ -29,7 +34,7 @@ const IndexPage = ({ data }) => {
   // );
 };
 
-export const pageQuery = graphql`
+export const query = graphql`
   query {
     allMdx {
       edges {
@@ -49,7 +54,7 @@ export const pageQuery = graphql`
       }
     }
   }
-`
+`;
 
 
 export default IndexPage
