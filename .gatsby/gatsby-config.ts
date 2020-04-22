@@ -73,20 +73,9 @@ module.exports = {
         },
         fileName: `./types/graphqlTypes.d.ts`,
         codegen: true,
-        codegenDelay: 250,
+        codegenDelay: 200,
         // alwaysCheck: false,
       }
     },
-    // {
-    //   resolve: `gatsby-plugin-graphql-codegen`,
-    //   options: {
-    //     fileName: `./types/gatsby-graphql.ts`,
-    //     documentPaths: [
-    //       './src/**/*.{ts,tsx}',
-    //       './node_modules/gatsby-*/**/*.js',
-    //       './.gatsby/gatsby-node.ts',
-    //     ],
-    //   }
-    // }
   ],
 }

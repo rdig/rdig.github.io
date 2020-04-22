@@ -694,8 +694,8 @@ export type FileFieldsEnum =
   'childMdx___rawBody' |
   'childMdx___fileAbsolutePath' |
   'childMdx___frontmatter___title' |
-  'childMdx___frontmatter___path' |
   'childMdx___frontmatter___date' |
+  'childMdx___frontmatter___path' |
   'childMdx___body' |
   'childMdx___excerpt' |
   'childMdx___headings' |
@@ -1779,8 +1779,8 @@ export type MdxFieldsEnum =
   'rawBody' |
   'fileAbsolutePath' |
   'frontmatter___title' |
-  'frontmatter___path' |
   'frontmatter___date' |
+  'frontmatter___path' |
   'body' |
   'excerpt' |
   'headings' |
@@ -1972,8 +1972,8 @@ export type MdxFilterInput = {
 
 export type MdxFrontmatter = {
   title: Scalars['String'];
-  path?: Maybe<Scalars['String']>;
   date?: Maybe<Scalars['Date']>;
+  path?: Maybe<Scalars['String']>;
 };
 
 
@@ -1986,8 +1986,8 @@ export type MdxFrontmatterDateArgs = {
 
 export type MdxFrontmatterFilterInput = {
   title?: Maybe<StringQueryOperatorInput>;
-  path?: Maybe<StringQueryOperatorInput>;
   date?: Maybe<DateQueryOperatorInput>;
+  path?: Maybe<StringQueryOperatorInput>;
 };
 
 export type MdxGroupConnection = {
@@ -2883,14 +2883,14 @@ export type SitePageFieldsEnum =
   'pluginCreator___pluginOptions___extensions' |
   'pluginCreator___pluginOptions___gatsbyRemarkPlugins' |
   'pluginCreator___pluginOptions___gatsbyRemarkPlugins___resolve' |
-  'pluginCreator___pluginOptions___projectRoot' |
-  'pluginCreator___pluginOptions___configDir' |
-  'pluginCreator___pluginOptions___pathCheck' |
   'pluginCreator___pluginOptions___tsLoader___logLevel' |
   'pluginCreator___pluginOptions___forkTsCheckerPlugin___eslint' |
   'pluginCreator___pluginOptions___fileName' |
   'pluginCreator___pluginOptions___codegen' |
   'pluginCreator___pluginOptions___codegenDelay' |
+  'pluginCreator___pluginOptions___projectRoot' |
+  'pluginCreator___pluginOptions___configDir' |
+  'pluginCreator___pluginOptions___pathCheck' |
   'pluginCreator___nodeAPIs' |
   'pluginCreator___browserAPIs' |
   'pluginCreator___ssrAPIs' |
@@ -3100,14 +3100,14 @@ export type SitePluginFieldsEnum =
   'pluginOptions___gatsbyRemarkPlugins___options___loading' |
   'pluginOptions___gatsbyRemarkPlugins___options___disableBgImageOnAlpha' |
   'pluginOptions___gatsbyRemarkPlugins___options___disableBgImage' |
-  'pluginOptions___projectRoot' |
-  'pluginOptions___configDir' |
-  'pluginOptions___pathCheck' |
   'pluginOptions___tsLoader___logLevel' |
   'pluginOptions___forkTsCheckerPlugin___eslint' |
   'pluginOptions___fileName' |
   'pluginOptions___codegen' |
   'pluginOptions___codegenDelay' |
+  'pluginOptions___projectRoot' |
+  'pluginOptions___configDir' |
+  'pluginOptions___pathCheck' |
   'nodeAPIs' |
   'browserAPIs' |
   'ssrAPIs' |
@@ -3229,14 +3229,14 @@ export type SitePluginPluginOptions = {
   display?: Maybe<Scalars['String']>;
   extensions?: Maybe<Array<Maybe<Scalars['String']>>>;
   gatsbyRemarkPlugins?: Maybe<Array<Maybe<SitePluginPluginOptionsGatsbyRemarkPlugins>>>;
-  projectRoot?: Maybe<Scalars['String']>;
-  configDir?: Maybe<Scalars['String']>;
-  pathCheck?: Maybe<Scalars['Boolean']>;
   tsLoader?: Maybe<SitePluginPluginOptionsTsLoader>;
   forkTsCheckerPlugin?: Maybe<SitePluginPluginOptionsForkTsCheckerPlugin>;
   fileName?: Maybe<Scalars['String']>;
   codegen?: Maybe<Scalars['Boolean']>;
   codegenDelay?: Maybe<Scalars['Int']>;
+  projectRoot?: Maybe<Scalars['String']>;
+  configDir?: Maybe<Scalars['String']>;
+  pathCheck?: Maybe<Scalars['Boolean']>;
 };
 
 export type SitePluginPluginOptionsFilterInput = {
@@ -3249,14 +3249,14 @@ export type SitePluginPluginOptionsFilterInput = {
   display?: Maybe<StringQueryOperatorInput>;
   extensions?: Maybe<StringQueryOperatorInput>;
   gatsbyRemarkPlugins?: Maybe<SitePluginPluginOptionsGatsbyRemarkPluginsFilterListInput>;
-  projectRoot?: Maybe<StringQueryOperatorInput>;
-  configDir?: Maybe<StringQueryOperatorInput>;
-  pathCheck?: Maybe<BooleanQueryOperatorInput>;
   tsLoader?: Maybe<SitePluginPluginOptionsTsLoaderFilterInput>;
   forkTsCheckerPlugin?: Maybe<SitePluginPluginOptionsForkTsCheckerPluginFilterInput>;
   fileName?: Maybe<StringQueryOperatorInput>;
   codegen?: Maybe<BooleanQueryOperatorInput>;
   codegenDelay?: Maybe<IntQueryOperatorInput>;
+  projectRoot?: Maybe<StringQueryOperatorInput>;
+  configDir?: Maybe<StringQueryOperatorInput>;
+  pathCheck?: Maybe<BooleanQueryOperatorInput>;
 };
 
 export type SitePluginPluginOptionsForkTsCheckerPlugin = {
@@ -3366,10 +3366,10 @@ export type Unnamed_1_Query = { mdx?: Maybe<(
     & { frontmatter?: Maybe<Pick<MdxFrontmatter, 'title'>> }
   )> };
 
-export type Unnamed_2_QueryVariables = {};
+export type AllPostsQueryVariables = {};
 
 
-export type Unnamed_2_Query = { allMdx: { edges: Array<{ node: (
+export type AllPostsQuery = { allMdx: { edges: Array<{ node: (
         Pick<Mdx, 'id' | 'excerpt'>
         & { frontmatter?: Maybe<Pick<MdxFrontmatter, 'title'>>, fields?: Maybe<Pick<MdxFields, 'slug'>>, headings?: Maybe<Array<Maybe<Pick<MdxHeadingMdx, 'value'>>>> }
       ) }> } };

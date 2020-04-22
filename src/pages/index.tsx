@@ -6,12 +6,17 @@ import Layout from "../components/layout"
 // import Image from "../components/image"
 import SEO from "../components/seo"
 
+import { AllPostsQuery } from '../../types/graphqlTypes';
+
 interface Props {
-  data: any;
+  data: AllPostsQuery;
 };
 
-const IndexPage = ({ data }: Props) => {
+const IndexPage = (
+  { data }: Props
+) => {
   const { edges: posts } = data.allMdx
+  console.log(posts);
 
   return <Layout><SEO title="Home" /></Layout>;
 
@@ -35,7 +40,7 @@ const IndexPage = ({ data }: Props) => {
 };
 
 export const query = graphql`
-  query {
+  query AllPosts {
     allMdx {
       edges {
         node {
