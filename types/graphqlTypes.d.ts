@@ -2891,6 +2891,9 @@ export type SitePageFieldsEnum =
   'pluginCreator___pluginOptions___projectRoot' |
   'pluginCreator___pluginOptions___configDir' |
   'pluginCreator___pluginOptions___pathCheck' |
+  'pluginCreator___pluginOptions___alias____graphqlTypes' |
+  'pluginCreator___pluginOptions___alias____queries' |
+  'pluginCreator___pluginOptions___alias____components' |
   'pluginCreator___nodeAPIs' |
   'pluginCreator___browserAPIs' |
   'pluginCreator___ssrAPIs' |
@@ -3108,6 +3111,9 @@ export type SitePluginFieldsEnum =
   'pluginOptions___projectRoot' |
   'pluginOptions___configDir' |
   'pluginOptions___pathCheck' |
+  'pluginOptions___alias____graphqlTypes' |
+  'pluginOptions___alias____queries' |
+  'pluginOptions___alias____components' |
   'nodeAPIs' |
   'browserAPIs' |
   'ssrAPIs' |
@@ -3237,6 +3243,19 @@ export type SitePluginPluginOptions = {
   projectRoot?: Maybe<Scalars['String']>;
   configDir?: Maybe<Scalars['String']>;
   pathCheck?: Maybe<Scalars['Boolean']>;
+  alias?: Maybe<SitePluginPluginOptionsAlias>;
+};
+
+export type SitePluginPluginOptionsAlias = {
+  _graphqlTypes?: Maybe<Scalars['String']>;
+  _queries?: Maybe<Scalars['String']>;
+  _components?: Maybe<Scalars['String']>;
+};
+
+export type SitePluginPluginOptionsAliasFilterInput = {
+  _graphqlTypes?: Maybe<StringQueryOperatorInput>;
+  _queries?: Maybe<StringQueryOperatorInput>;
+  _components?: Maybe<StringQueryOperatorInput>;
 };
 
 export type SitePluginPluginOptionsFilterInput = {
@@ -3257,6 +3276,7 @@ export type SitePluginPluginOptionsFilterInput = {
   projectRoot?: Maybe<StringQueryOperatorInput>;
   configDir?: Maybe<StringQueryOperatorInput>;
   pathCheck?: Maybe<BooleanQueryOperatorInput>;
+  alias?: Maybe<SitePluginPluginOptionsAliasFilterInput>;
 };
 
 export type SitePluginPluginOptionsForkTsCheckerPlugin = {
@@ -3365,6 +3385,11 @@ export type Unnamed_1_Query = { mdx?: Maybe<(
     Pick<Mdx, 'id' | 'body'>
     & { frontmatter?: Maybe<Pick<MdxFrontmatter, 'title'>> }
   )> };
+
+export type SiteTitleQueryVariables = {};
+
+
+export type SiteTitleQuery = { site?: Maybe<{ siteMetadata?: Maybe<Pick<SiteSiteMetadata, 'title'>> }> };
 
 export type AllPostsQueryVariables = {};
 
