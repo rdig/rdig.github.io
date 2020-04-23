@@ -347,3 +347,13 @@ template {
 [hidden] {
   display: none;
 }
+
+body, html {
+  height: 100%;
+}
+/**
+ * Gatsby-generated elements
+ */
+:global(#___gatsby), :global(#gatsby-focus-wrapper) {
+  height: 100%;
+}
