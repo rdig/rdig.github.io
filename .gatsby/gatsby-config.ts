@@ -1,7 +1,9 @@
+import path from 'path';
+
 module.exports = {
   siteMetadata: {
-    title: `Gatsby`,
-    description: `Powered by Gatsby`,
+    title: `Raul Glogovetan`,
+    description: `Personal Website`,
     author: `Raul Glogovetan`,
   },
   plugins: [
@@ -77,5 +79,23 @@ module.exports = {
         // alwaysCheck: false,
       }
     },
+    {
+      resolve: `gatsby-plugin-alias-imports`,
+      options: {
+        alias: {
+          '@graphqlTypes': 'types/graphqlTypes.d.ts',
+          '@queries': 'src/data/queries.ts',
+          '@components': 'src/components',
+        },
+        extensions: [
+          'js',
+          'jsx',
+          'ts',
+          'd.ts',
+          'tsx',
+          'css',
+        ]
+      }
+    }
   ],
 }
