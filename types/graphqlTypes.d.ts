@@ -2894,6 +2894,7 @@ export type SitePageFieldsEnum =
   'pluginCreator___pluginOptions___alias____graphqlTypes' |
   'pluginCreator___pluginOptions___alias____queries' |
   'pluginCreator___pluginOptions___alias____components' |
+  'pluginCreator___pluginOptions___alias____styles' |
   'pluginCreator___nodeAPIs' |
   'pluginCreator___browserAPIs' |
   'pluginCreator___ssrAPIs' |
@@ -3114,6 +3115,7 @@ export type SitePluginFieldsEnum =
   'pluginOptions___alias____graphqlTypes' |
   'pluginOptions___alias____queries' |
   'pluginOptions___alias____components' |
+  'pluginOptions___alias____styles' |
   'nodeAPIs' |
   'browserAPIs' |
   'ssrAPIs' |
@@ -3250,12 +3252,14 @@ export type SitePluginPluginOptionsAlias = {
   _graphqlTypes?: Maybe<Scalars['String']>;
   _queries?: Maybe<Scalars['String']>;
   _components?: Maybe<Scalars['String']>;
+  _styles?: Maybe<Scalars['String']>;
 };
 
 export type SitePluginPluginOptionsAliasFilterInput = {
   _graphqlTypes?: Maybe<StringQueryOperatorInput>;
   _queries?: Maybe<StringQueryOperatorInput>;
   _components?: Maybe<StringQueryOperatorInput>;
+  _styles?: Maybe<StringQueryOperatorInput>;
 };
 
 export type SitePluginPluginOptionsFilterInput = {

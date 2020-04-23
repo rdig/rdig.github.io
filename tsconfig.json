@@ -45,6 +45,7 @@
       "@graphqlTypes": ["types/graphqlTypes.d.ts"],
       "@queries": ["src/data/queries.ts"],
       "@components/*": ["src/components/*"],
+      "@styles/*": ["src/styles/*"],
     },                           /* A series of entries which re-map imports to lookup locations relative to the 'baseUrl'. */
     // "rootDirs": [],                        /* List of root folders whose combined content represents the structure of the project at runtime. */
     "typeRoots": ["types", "node_modules/@types"],                       /* List of folders to include type definitions from. */

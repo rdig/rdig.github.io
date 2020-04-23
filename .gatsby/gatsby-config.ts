@@ -86,6 +86,7 @@ module.exports = {
           '@graphqlTypes': 'types/graphqlTypes.d.ts',
           '@queries': 'src/data/queries.ts',
           '@components': 'src/components',
+          '@styles': 'src/styles',
         },
         extensions: [
           'js',

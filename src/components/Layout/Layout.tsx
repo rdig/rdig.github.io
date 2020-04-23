@@ -5,6 +5,8 @@ import Header from '@components/header';
 import { fetchSiteTitle } from '@queries';
 import { SiteTitleQuery } from '@graphqlTypes';
 
+import '@styles/normalize.css';
+
 interface Props {
   children?: ReactNode,
 };
