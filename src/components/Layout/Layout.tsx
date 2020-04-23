@@ -6,6 +6,9 @@ import { fetchSiteTitle } from '@queries';
 import { SiteTitleQuery } from '@graphqlTypes';
 
 import '@styles/normalize.css';
+import '@styles/fonts.css';
+import '@styles/variables.css';
+import styles from './Layout.module.css';
 
 interface Props {
   children?: ReactNode,
@@ -14,7 +17,7 @@ interface Props {
 const Layout = ({ children }: Props) => {
   const data: SiteTitleQuery = fetchSiteTitle();
   return (
-    <>
+    <div className={styles.main}>
       <Header siteTitle={data?.site?.siteMetadata?.title} />
       <div>
         <main>{children}</main>
@@ -22,7 +25,7 @@ const Layout = ({ children }: Props) => {
           © {new Date().getFullYear()}
         </footer>
       </div>
-    </>
+    </div>
   )
 };
 

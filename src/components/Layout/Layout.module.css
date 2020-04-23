@@ -1,0 +1,9 @@
+.main {
+  width: 100%;
+  height: 100%;
+  background-color: var(--dark);
+  color: var(--almost-white);
+  font-family: var(--open-sans);
+  font-size: var(--size-normal);
+  font-weight: var(--weight-light);
+}
