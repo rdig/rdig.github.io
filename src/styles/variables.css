@@ -1,0 +1,23 @@
+:root {
+  /**
+   * Fonts
+   */
+  --open-sans: 'Open Sans', sans-serif;
+  --inter: 'Inter', sans-serif;
+  /*
+   * Fonts sizes
+   */
+  --size-normal: 14px;
+  /*
+   * Fonts weights
+   */
+  --weight-light: 300;
+  --weight-normal: 400;
+  --weight-semi: 600;
+  --weight-bold: 700;
+  /**
+   * Colors
+   */
+  --dark: #202124;
+  --almost-white: #f9f9f9;
+}
