@@ -97,6 +97,7 @@ module.exports = {
           'css',
         ]
       }
-    }
+    },
+    'gatsby-transformer-typescript-css-modules',
   ],
 }

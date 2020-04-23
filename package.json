@@ -50,6 +50,7 @@
     "url": "https://github.com/rdig/rdig.github.io/issues"
   },
   "dependencies": {
-    "gatsby-plugin-alias-imports": "^1.0.5"
+    "gatsby-plugin-alias-imports": "^1.0.5",
+    "gatsby-transformer-typescript-css-modules": "^1.0.14"
   }
 }
