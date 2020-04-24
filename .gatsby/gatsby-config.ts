@@ -85,6 +85,8 @@ module.exports = {
           '@queries': 'src/data/queries.ts',
           '@components': 'src/components',
           '@styles': 'src/styles',
+          '@utils': 'src/utils',
+          '@constants': 'src/utils/constants.ts',
         },
         extensions: [
           'js',
