@@ -1,4 +1,5 @@
 @value large from '@styles/breakpoints.css';
+@value medium from '@styles/breakpoints.css';
 
 body {
   background-color: var(--dark);
@@ -17,6 +18,12 @@ h1 {
 .main {
   margin: 0;
   padding: 20px;
+}
+
+@media (medium) {
+  .main {
+    padding: 40px 20px;
+  }
 }
 
 @media (large) {

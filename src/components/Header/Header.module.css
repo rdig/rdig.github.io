@@ -1,20 +1,28 @@
+@value medium from '@styles/breakpoints.css';
+
 .main {
-  height: 64px;
   margin: 0 0 40px 0;
 }
 
 .main h1 {
-  display: inline-block;
+  display: block;
   margin: 0;
   font-size: 20px;
   font-weight: var(--weight-normal);
   font-family: var(--inter);
-  vertical-align: top;
+}
+
+@media (medium) {
+  .main h1 {
+    display: inline-block;
+    /* padding: 20px 0 21px; */
+    vertical-align: top;
+  }
 }
 
 .main h1 a {
   display: block;
-  padding: 20px 0 21px;
+  padding: 20px 0 8px;
   color: var(--almost-white);
   text-decoration: none;
 }
@@ -23,24 +31,50 @@
   color: var(--generalissimo-blue);
 }
 
+@media (medium) {
+  .main h1 a {
+    padding: 20px 0 21px;
+  }
+}
+
 .main ul {
-  display: inline-block;
-  margin: 0 0 0 20px;
+  display: block;
+  margin: 0 0 0 -10px;
   padding: 0;
-  vertical-align: top;
+}
+
+@media (medium) {
+  .main ul {
+    display: inline-block;
+    margin: 0 0 0 20px;
+    vertical-align: top;
+  }
 }
 
 .main li {
   display: inline-block;
   font-weight: var(--weight-semi);
   font-size: 14px;
+  height: 48px;
+}
+
+@media (medium) {
+  .main li {
+    height: 64px;
+  }
 }
 
 .main li a {
   display: block;
   color: var(--almost-white);
   text-decoration: none;
-  padding: 24px 10px;
+  padding: 8px 10px 24px;
+}
+
+@media (medium) {
+  .main li a  {
+    padding: 24px 10px;
+  }
 }
 
 .main li a:hover::after {
