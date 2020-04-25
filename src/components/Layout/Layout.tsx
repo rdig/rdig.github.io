@@ -1,6 +1,7 @@
 import React, { FC, ReactNode } from 'react';
 
 import Header from '@components/header';
+import Footer from '@components/Footer';
 
 import { fetchSiteTitle } from '@queries';
 import { SiteTitleQuery } from '@graphqlTypes';
@@ -16,15 +17,12 @@ interface Props {
 
 const Layout = ({ children }: Props) => {
   const data: SiteTitleQuery = fetchSiteTitle();
+  const title = data?.site?.siteMetadata?.title || '';
   return (
     <div className={styles.main}>
-      <Header siteTitle={data?.site?.siteMetadata?.title} />
-      <div>
-        <main>{children}</main>
-        <footer>
-          © {new Date().getFullYear()}
-        </footer>
-      </div>
+      <Header siteTitle={title} />
+      <main>{children}</main>
+      <Footer title={title} />
     </div>
   )
 };

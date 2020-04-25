@@ -1,10 +1,8 @@
-import path from 'path';
-
 module.exports = {
   siteMetadata: {
-    title: `Raul Glogovetan`,
+    title: `Raul Glogoveţan`,
     description: `Personal Website`,
-    author: `Raul Glogovetan`,
+    // author: `Raul Glogovetan`,
   },
   plugins: [
     `gatsby-plugin-react-helmet`,

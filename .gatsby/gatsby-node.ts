@@ -1,5 +1,8 @@
-const path = require("path")
-const { createFilePath } = require("gatsby-source-filesystem")
+// const path = require("path");
+// const { createFilePath } = require("gatsby-source-filesystem")
+
+import path from 'path';
+import { createFilePath } from 'gatsby-source-filesystem';
 
 exports.onCreateNode = ({ node, actions, getNode }) => {
   const { createNodeField } = actions
@@ -25,7 +28,7 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
   // Destructure the createPage function from the actions object
   const { createPage } = actions
 
-  const result = await graphql(`
+  const result: AllMdxQuery = await graphql(`
     query AllMdx {
       allMdx {
         edges {

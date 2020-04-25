@@ -11,6 +11,7 @@ export const fetchSiteTitle = () => useStaticQuery(graphql`
     site {
       siteMetadata {
         title
+        description
       }
     }
   }
