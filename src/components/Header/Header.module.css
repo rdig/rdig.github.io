@@ -1,0 +1,51 @@
+.main {
+  height: 64px;
+  margin: 0 0 40px 0;
+}
+
+.main h1 {
+  display: inline-block;
+  margin: 0;
+  font-size: 20px;
+  font-weight: var(--weight-normal);
+  font-family: var(--inter);
+  vertical-align: top;
+}
+
+.main h1 a {
+  display: block;
+  padding: 20px 0 21px;
+  color: var(--almost-white);
+  text-decoration: none;
+}
+
+.main h1 a:hover {
+  color: var(--generalissimo-blue);
+}
+
+.main ul {
+  display: inline-block;
+  margin: 0 0 0 20px;
+  padding: 0;
+  vertical-align: top;
+}
+
+.main li {
+  display: inline-block;
+  font-weight: var(--weight-semi);
+  font-size: 14px;
+}
+
+.main li a {
+  display: block;
+  color: var(--almost-white);
+  text-decoration: none;
+  padding: 24px 10px;
+}
+
+.main li a:hover::after {
+  content: "";
+  display: block;
+  margin-top: 10px;
+  border-bottom: 1px solid var(--generalissimo-blue);
+}

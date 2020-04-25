@@ -1,6 +1,6 @@
 import React, { FC, ReactNode } from 'react';
 
-import Header from '@components/header';
+import Header from '@components/Header';
 import Footer from '@components/Footer';
 
 import { fetchSiteTitle } from '@queries';
@@ -20,7 +20,7 @@ const Layout = ({ children }: Props) => {
   const title = data?.site?.siteMetadata?.title || '';
   return (
     <div className={styles.main}>
-      <Header siteTitle={title} />
+      <Header title={title} />
       <main>{children}</main>
       <Footer title={title} />
     </div>
