@@ -709,6 +709,8 @@ export type FileFieldsEnum =
   'childMdx___wordCount___sentences' |
   'childMdx___wordCount___words' |
   'childMdx___fields___slug' |
+  'childMdx___fields___date' |
+  'childMdx___fields___title' |
   'childMdx___id' |
   'childMdx___parent___id' |
   'childMdx___parent___parent___id' |
@@ -1773,6 +1775,16 @@ export type MdxEdge = {
 
 export type MdxFields = {
   slug?: Maybe<Scalars['String']>;
+  date?: Maybe<Scalars['Date']>;
+  title?: Maybe<Scalars['String']>;
+};
+
+
+export type MdxFieldsDateArgs = {
+  formatString?: Maybe<Scalars['String']>;
+  fromNow?: Maybe<Scalars['Boolean']>;
+  difference?: Maybe<Scalars['String']>;
+  locale?: Maybe<Scalars['String']>;
 };
 
 export type MdxFieldsEnum = 
@@ -1794,6 +1806,8 @@ export type MdxFieldsEnum =
   'wordCount___sentences' |
   'wordCount___words' |
   'fields___slug' |
+  'fields___date' |
+  'fields___title' |
   'id' |
   'parent___id' |
   'parent___parent___id' |
@@ -1948,6 +1962,8 @@ export type MdxFieldsEnum =
 
 export type MdxFieldsFilterInput = {
   slug?: Maybe<StringQueryOperatorInput>;
+  date?: Maybe<DateQueryOperatorInput>;
+  title?: Maybe<StringQueryOperatorInput>;
 };
 
 export type MdxFilterInput = {
@@ -2887,15 +2903,15 @@ export type SitePageFieldsEnum =
   'pluginCreator___pluginOptions___fileName' |
   'pluginCreator___pluginOptions___codegen' |
   'pluginCreator___pluginOptions___codegenDelay' |
-  'pluginCreator___pluginOptions___projectRoot' |
-  'pluginCreator___pluginOptions___configDir' |
-  'pluginCreator___pluginOptions___pathCheck' |
   'pluginCreator___pluginOptions___alias____graphqlTypes' |
   'pluginCreator___pluginOptions___alias____queries' |
   'pluginCreator___pluginOptions___alias____components' |
   'pluginCreator___pluginOptions___alias____styles' |
   'pluginCreator___pluginOptions___alias____utils' |
   'pluginCreator___pluginOptions___alias____constants' |
+  'pluginCreator___pluginOptions___projectRoot' |
+  'pluginCreator___pluginOptions___configDir' |
+  'pluginCreator___pluginOptions___pathCheck' |
   'pluginCreator___nodeAPIs' |
   'pluginCreator___browserAPIs' |
   'pluginCreator___ssrAPIs' |
@@ -3110,15 +3126,15 @@ export type SitePluginFieldsEnum =
   'pluginOptions___fileName' |
   'pluginOptions___codegen' |
   'pluginOptions___codegenDelay' |
-  'pluginOptions___projectRoot' |
-  'pluginOptions___configDir' |
-  'pluginOptions___pathCheck' |
   'pluginOptions___alias____graphqlTypes' |
   'pluginOptions___alias____queries' |
   'pluginOptions___alias____components' |
   'pluginOptions___alias____styles' |
   'pluginOptions___alias____utils' |
   'pluginOptions___alias____constants' |
+  'pluginOptions___projectRoot' |
+  'pluginOptions___configDir' |
+  'pluginOptions___pathCheck' |
   'nodeAPIs' |
   'browserAPIs' |
   'ssrAPIs' |
@@ -3245,10 +3261,10 @@ export type SitePluginPluginOptions = {
   fileName?: Maybe<Scalars['String']>;
   codegen?: Maybe<Scalars['Boolean']>;
   codegenDelay?: Maybe<Scalars['Int']>;
+  alias?: Maybe<SitePluginPluginOptionsAlias>;
   projectRoot?: Maybe<Scalars['String']>;
   configDir?: Maybe<Scalars['String']>;
   pathCheck?: Maybe<Scalars['Boolean']>;
-  alias?: Maybe<SitePluginPluginOptionsAlias>;
 };
 
 export type SitePluginPluginOptionsAlias = {
@@ -3284,10 +3300,10 @@ export type SitePluginPluginOptionsFilterInput = {
   fileName?: Maybe<StringQueryOperatorInput>;
   codegen?: Maybe<BooleanQueryOperatorInput>;
   codegenDelay?: Maybe<IntQueryOperatorInput>;
+  alias?: Maybe<SitePluginPluginOptionsAliasFilterInput>;
   projectRoot?: Maybe<StringQueryOperatorInput>;
   configDir?: Maybe<StringQueryOperatorInput>;
   pathCheck?: Maybe<BooleanQueryOperatorInput>;
-  alias?: Maybe<SitePluginPluginOptionsAliasFilterInput>;
 };
 
 export type SitePluginPluginOptionsForkTsCheckerPlugin = {
@@ -3405,7 +3421,7 @@ export type AllPostsQueryVariables = {};
 
 export type AllPostsQuery = { allMdx: { edges: Array<{ node: (
         Pick<Mdx, 'id' | 'excerpt'>
-        & { frontmatter?: Maybe<Pick<MdxFrontmatter, 'title'>>, fields?: Maybe<Pick<MdxFields, 'slug'>>, headings?: Maybe<Array<Maybe<Pick<MdxHeadingMdx, 'value'>>>> }
+        & { fields?: Maybe<Pick<MdxFields, 'slug' | 'date' | 'title'>> }
       ) }> } };
 
 export type GatsbyImageSharpFixedFragment = Pick<ImageSharpFixed, 'base64' | 'width' | 'height' | 'src' | 'srcSet'>;
