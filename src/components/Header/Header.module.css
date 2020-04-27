@@ -8,7 +8,7 @@
   display: block;
   margin: 0;
   font-size: 20px;
-  font-weight: var(--weight-normal);
+  font-weight: var(--weight-light);
   font-family: var(--inter);
 }
 
