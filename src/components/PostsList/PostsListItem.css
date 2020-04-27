@@ -1,0 +1,62 @@
+@value large from '@styles/breakpoints.css';
+
+.main {
+  margin: 0;
+  padding: 0;
+}
+
+.title h2 {
+  margin: 0 0 5px 0;
+  font-size: var(--size-large);
+  font-family: var(--inter);
+  font-weight: var(--weight-light);
+}
+
+@media (large) {
+  .title h2 {
+    display: inline;
+  }
+}
+
+.title h2 a {
+  text-decoration: none;
+  color: var(--amost-white);
+}
+
+.title h2 a:hover {
+  color: var(--generalissimo-blue);
+}
+
+.title {
+  margin: 0 0 15px 0;
+}
+
+@media (large) {
+  .title {
+    margin: 0 0 10px 0;
+  }
+}
+
+.date {
+  font-family: var(--open-sans);
+  font-weight: var(--weight-normal);
+  font-size: var(--size-small);
+  color: var(--somewhat-grey);
+}
+
+@media (large) {
+  .date {
+    margin-left: 20px;
+  }
+}
+
+.main p {
+  margin: 0 0 60px 0;
+  font-size: var(--size-small);
+}
+
+@media (large) {
+  .main p {
+    margin: 0 0 50px 0;
+  }
+}

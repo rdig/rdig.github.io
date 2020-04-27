@@ -17,19 +17,19 @@ h1 {
 
 .main {
   margin: 0;
-  padding: 20px;
+  padding: 20px 20px 80px 20px;
 }
 
 @media (medium) {
   .main {
-    padding: 40px 20px;
+    padding: 40px 20px 80px;
   }
 }
 
 @media (large) {
   .main {
     width: 1000px;
-    padding: 40px 0;
+    padding: 40px 0 80px;
     margin: 0 auto;
   }
 }

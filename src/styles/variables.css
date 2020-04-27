@@ -8,6 +8,7 @@
    * Fonts sizes
    */
   --size-extra-large: 36px;
+  --size-large: 24px;
   --size-normal: 16px;
   --size-small: 14px;
   /*
@@ -23,4 +24,5 @@
   --dark: #202124;
   --almost-white: #f9f9f9;
   --generalissimo-blue: #2b94e8;
+  --somewhat-grey: #a2a2a3;
 }
