@@ -21,6 +21,7 @@
 .title h2 a {
   text-decoration: none;
   color: var(--amost-grey);
+  text-shadow: var(--shadow-dark);
 }
 
 .title h2 a:hover {
@@ -42,6 +43,7 @@
   font-weight: var(--weight-normal);
   font-size: var(--size-small);
   color: var(--somewhat-grey);
+  text-shadow: var(--shadow-dark);
 }
 
 @media (large) {
@@ -53,6 +55,8 @@
 .main p {
   margin: 0 0 60px 0;
   font-size: var(--size-small);
+  color: var(--almost-grey);
+  text-shadow: var(--shadow-dark);
 }
 
 @media (large) {

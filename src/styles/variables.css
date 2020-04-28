@@ -21,8 +21,14 @@
   /**
    * Colors
    */
+  --just-black: #000000;
   --dark: #202124;
-  --almost-white: #f9f9f9;
+  --almost-white: #e0e0e0;
   --generalissimo-blue: #2b94e8;
+  --almost-grey: #c2c2c2;
   --somewhat-grey: #a2a2a3;
+  /**
+   * Text Shadow
+   */
+  --shadow-dark: 1px 1px 4px var(--just-black);
 }
