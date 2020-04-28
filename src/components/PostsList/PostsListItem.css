@@ -1,4 +1,4 @@
-@value large from '@styles/breakpoints.css';
+@value max from '@styles/breakpoints.css';
 
 .main {
   margin: 0;
@@ -7,12 +7,12 @@
 
 .title h2 {
   margin: 0 0 5px 0;
-  font-size: var(--size-large);
+  font-size: var(--size-max);
   font-family: var(--inter);
   font-weight: var(--weight-light);
 }
 
-@media (large) {
+@media (max) {
   .title h2 {
     display: inline;
   }
@@ -31,7 +31,7 @@
   margin: 0 0 15px 0;
 }
 
-@media (large) {
+@media (max) {
   .title {
     margin: 0 0 8px 0;
   }
@@ -44,7 +44,7 @@
   color: var(--somewhat-grey);
 }
 
-@media (large) {
+@media (max) {
   .date {
     margin-left: 10px;
   }

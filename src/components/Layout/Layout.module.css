@@ -1,4 +1,4 @@
-@value large from '@styles/breakpoints.css';
+@value max from '@styles/breakpoints.css';
 @value medium from '@styles/breakpoints.css';
 
 body {
@@ -26,7 +26,7 @@ h1 {
   }
 }
 
-@media (large) {
+@media (max) {
   .main {
     width: 1000px;
     padding: 40px 0 80px;
