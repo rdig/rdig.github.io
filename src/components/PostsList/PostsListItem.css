@@ -33,7 +33,7 @@
 
 @media (large) {
   .title {
-    margin: 0 0 10px 0;
+    margin: 0 0 8px 0;
   }
 }
 
@@ -46,17 +46,11 @@
 
 @media (large) {
   .date {
-    margin-left: 20px;
+    margin-left: 10px;
   }
 }
 
 .main p {
   margin: 0 0 60px 0;
   font-size: var(--size-small);
-}
-
-@media (large) {
-  .main p {
-    margin: 0 0 50px 0;
-  }
 }
