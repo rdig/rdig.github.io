@@ -2904,7 +2904,6 @@ export type SitePageFieldsEnum =
   'pluginCreator___pluginOptions___codegen' |
   'pluginCreator___pluginOptions___codegenDelay' |
   'pluginCreator___pluginOptions___alias____graphqlTypes' |
-  'pluginCreator___pluginOptions___alias____queries' |
   'pluginCreator___pluginOptions___alias____components' |
   'pluginCreator___pluginOptions___alias____styles' |
   'pluginCreator___pluginOptions___alias____utils' |
@@ -3127,7 +3126,6 @@ export type SitePluginFieldsEnum =
   'pluginOptions___codegen' |
   'pluginOptions___codegenDelay' |
   'pluginOptions___alias____graphqlTypes' |
-  'pluginOptions___alias____queries' |
   'pluginOptions___alias____components' |
   'pluginOptions___alias____styles' |
   'pluginOptions___alias____utils' |
@@ -3269,7 +3267,6 @@ export type SitePluginPluginOptions = {
 
 export type SitePluginPluginOptionsAlias = {
   _graphqlTypes?: Maybe<Scalars['String']>;
-  _queries?: Maybe<Scalars['String']>;
   _components?: Maybe<Scalars['String']>;
   _styles?: Maybe<Scalars['String']>;
   _utils?: Maybe<Scalars['String']>;
@@ -3278,7 +3275,6 @@ export type SitePluginPluginOptionsAlias = {
 
 export type SitePluginPluginOptionsAliasFilterInput = {
   _graphqlTypes?: Maybe<StringQueryOperatorInput>;
-  _queries?: Maybe<StringQueryOperatorInput>;
   _components?: Maybe<StringQueryOperatorInput>;
   _styles?: Maybe<StringQueryOperatorInput>;
   _utils?: Maybe<StringQueryOperatorInput>;
