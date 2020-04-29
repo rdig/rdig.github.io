@@ -1,4 +1,4 @@
-@value max from '@styles/breakpoints.css';
+@value large from '@styles/breakpoints.css';
 
 .main {
   margin: 0;
@@ -7,12 +7,12 @@
 
 .title h2 {
   margin: 0 0 5px 0;
-  font-size: var(--size-max);
+  font-size: var(--size-large);
   font-family: var(--inter);
   font-weight: var(--weight-light);
 }
 
-@media (max) {
+@media (large) {
   .title h2 {
     display: inline;
   }
@@ -20,7 +20,7 @@
 
 .title h2 a {
   text-decoration: none;
-  color: var(--amost-white);
+  color: var(--amost-grey);
 }
 
 .title h2 a:hover {
@@ -31,7 +31,7 @@
   margin: 0 0 15px 0;
 }
 
-@media (max) {
+@media (large) {
   .title {
     margin: 0 0 8px 0;
   }
@@ -44,7 +44,7 @@
   color: var(--somewhat-grey);
 }
 
-@media (max) {
+@media (large) {
   .date {
     margin-left: 10px;
   }
@@ -53,4 +53,12 @@
 .main p {
   margin: 0 0 60px 0;
   font-size: var(--size-small);
+}
+
+@media (large) {
+  .main p {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
 }

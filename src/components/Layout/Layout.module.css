@@ -1,9 +1,9 @@
-@value max from '@styles/breakpoints.css';
 @value medium from '@styles/breakpoints.css';
+@value large from '@styles/breakpoints.css';
 
 body {
   background-color: var(--dark);
-  color: var(--almost-white);
+  color: var(--almost-grey);
   font-family: var(--open-sans);
   font-size: var(--size-normal);
   font-weight: var(--weight-light);
@@ -26,10 +26,11 @@ h1 {
   }
 }
 
-@media (max) {
+@media (large) {
   .main {
-    width: 1000px;
-    padding: 40px 0 80px;
+    /* padding: ; */
+    padding: 40px 0px 80px;
+    width: 800px;
     margin: 0 auto;
   }
 }
