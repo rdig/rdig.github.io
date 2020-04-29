@@ -82,7 +82,6 @@ module.exports = {
       options: {
         alias: {
           '@graphqlTypes': 'types/graphqlTypes.d.ts',
-          '@queries': 'src/data/queries.ts',
           '@components': 'src/components',
           '@styles': 'src/styles',
           '@utils': 'src/utils',

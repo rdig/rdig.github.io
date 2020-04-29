@@ -3,7 +3,7 @@ import React, { FC, ReactNode } from 'react';
 import Header from '@components/Header';
 import Footer from '@components/Footer';
 
-import { fetchSiteTitle } from '@queries';
+import { fetchSiteTitle } from './queries';
 import { SiteTitleQuery } from '@graphqlTypes';
 
 import '@styles/normalize.css';

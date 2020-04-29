@@ -3401,6 +3401,11 @@ export type StringQueryOperatorInput = {
   glob?: Maybe<Scalars['String']>;
 };
 
+export type SiteTitleQueryVariables = {};
+
+
+export type SiteTitleQuery = { site?: Maybe<{ siteMetadata?: Maybe<Pick<SiteSiteMetadata, 'title' | 'description'>> }> };
+
 export type Unnamed_1_QueryVariables = {
   id?: Maybe<Scalars['String']>;
 };
@@ -3410,11 +3415,6 @@ export type Unnamed_1_Query = { mdx?: Maybe<(
     Pick<Mdx, 'id' | 'body'>
     & { frontmatter?: Maybe<Pick<MdxFrontmatter, 'title'>> }
   )> };
-
-export type SiteTitleQueryVariables = {};
-
-
-export type SiteTitleQuery = { site?: Maybe<{ siteMetadata?: Maybe<Pick<SiteSiteMetadata, 'title' | 'description'>> }> };
 
 export type AllPostsQueryVariables = {};
 
