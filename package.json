@@ -6,7 +6,7 @@
   "author": "Raul Glogovtan <raul@glogovetan.com>",
   "devDependencies": {
     "@mdx-js/mdx": "^1.5.8",
-    "@mdx-js/react": "^1.5.8",
+    "@mdx-js/react": "^1.6.0",
     "@types/babel__core": "^7.1.7",
     "@types/node": "^13.13.1",
     "@types/react": "^16.9.34",
@@ -51,6 +51,7 @@
   },
   "dependencies": {
     "@types/dateformat": "^3.0.1",
+    "@types/mdx-js__react": "^1.5.1",
     "dateformat": "^3.0.3",
     "gatsby-plugin-alias-imports": "^1.0.5",
     "gatsby-transformer-typescript-css-modules": "^1.0.14",

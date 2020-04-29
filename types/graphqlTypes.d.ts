@@ -3412,6 +3412,13 @@ export type Unnamed_1_Query = { mdx?: Maybe<(
     & { frontmatter?: Maybe<Pick<MdxFrontmatter, 'title'>> }
   )> };
 
+export type SinglePostQueryVariables = {
+  id?: Maybe<Scalars['String']>;
+};
+
+
+export type SinglePostQuery = { mdx?: Maybe<Pick<Mdx, 'id' | 'body'>> };
+
 export type AllPostsQueryVariables = {};
 
 
