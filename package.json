@@ -21,7 +21,6 @@
     "gatsby-plugin-sharp": "^2.4.13",
     "gatsby-plugin-ts": "^2.7.1",
     "gatsby-plugin-ts-config": "^0.2.2",
-    "gatsby-remark-images": "^3.2.4",
     "gatsby-remark-vscode": "^2.0.3",
     "gatsby-source-filesystem": "^2.1.56",
     "gatsby-transformer-sharp": "^2.3.19",
