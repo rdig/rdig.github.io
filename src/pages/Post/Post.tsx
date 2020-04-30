@@ -4,6 +4,7 @@ import { MDXRenderer } from 'gatsby-plugin-mdx';
 
 import Layout from '@components/Layout';
 import Heading from '@components/Heading';
+import DateComponent from '@components/DateComponent';
 
 import { SinglePostQuery } from '@graphqlTypes';
 
@@ -32,7 +33,7 @@ export default ({ data }: Props) => {
   return (
     <Layout>
       <article className={styles.main}>
-        <span className={styles.date}>{data?.mdx?.fields?.date}</span>
+        <DateComponent date={data?.mdx?.fields?.date} />
         <MDXProvider components={customComponents}>
           <MDXRenderer>
             {data?.mdx?.body ?? ''}

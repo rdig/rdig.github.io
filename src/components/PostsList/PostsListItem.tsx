@@ -2,6 +2,8 @@ import React, { FC } from 'react';
 import { Link } from 'gatsby';
 import dateFormat from 'dateformat';
 
+import DateComponent from '@components/DateComponent';
+
 import styles from './PostsListItem.css';
 
 interface PostExcerpt {
@@ -29,9 +31,7 @@ const PostsListItem = ({
   <li className={styles.main}>
     <div className={styles.title}>
       <h2><Link to={slug}>{title}</Link></h2>
-      <span className={styles.date}>
-        {dateFormat(new Date(date), 'mmmm dS, yyyy')}
-      </span>
+      <DateComponent date={date} additionalClassName={styles.date} />
     </div>
     <p>{excerpt}</p>
   </li>

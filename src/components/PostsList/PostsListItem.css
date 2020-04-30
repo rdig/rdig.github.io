@@ -38,14 +38,6 @@
   }
 }
 
-.date {
-  font-family: var(--open-sans);
-  font-weight: var(--weight-normal);
-  font-size: var(--size-small);
-  color: var(--somewhat-grey);
-  text-shadow: var(--shadow-dark);
-}
-
 @media (large) {
   .date {
     margin-left: 10px;
