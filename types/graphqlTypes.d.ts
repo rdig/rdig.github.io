@@ -3417,7 +3417,10 @@ export type SinglePostQueryVariables = {
 };
 
 
-export type SinglePostQuery = { mdx?: Maybe<Pick<Mdx, 'id' | 'body'>> };
+export type SinglePostQuery = { mdx?: Maybe<(
+    Pick<Mdx, 'id' | 'body'>
+    & { fields?: Maybe<Pick<MdxFields, 'slug' | 'date'>> }
+  )> };
 
 export type AllPostsQueryVariables = {};
 

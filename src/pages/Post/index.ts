@@ -11,6 +11,10 @@ export const postQuery = graphql`
     mdx(id: { eq: $id }) {
       id
       body
+      fields {
+        slug
+        date
+      }
     }
   }
 `
