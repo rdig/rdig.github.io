@@ -7,6 +7,7 @@ import Heading from '@components/Heading';
 import DateComponent from '@components/DateComponent';
 import Image from '@components/Image';
 import Paragraph from '@components/Paragraph';
+import Code from '@components/Code';
 
 import { SinglePostQuery } from '@graphqlTypes';
 
@@ -31,6 +32,13 @@ interface ParagraphNode {
   children: string | ReactNode;
 };
 
+interface CodeNode {
+  className: string;
+  children: ReactNode;
+  'data-language': string;
+  'data-index': number;
+};
+
 interface Props {
   data: SinglePostQuery;
 };
@@ -53,6 +61,11 @@ const Post = ({ data }: Props) => {
       <Paragraph additionalClassName={styles.paragraph}>
         {children}
       </Paragraph>
+    ),
+    pre: ({ className, children }: CodeNode) => (
+      <Code additionalClassName={`${styles.code} ${className}`}>
+        {children}
+      </Code>
     ),
   };
   return (

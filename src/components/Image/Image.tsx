@@ -22,7 +22,6 @@ const Image = ({ alt, title, src, additionalClassName }: Props) => {
     [data, src],
   );
   const fluidImage: FluidObject | undefined = imageMatch?.node?.fluid;
-  console.log(fluidImage);
   if (fluidImage) {
     return (
       <section className={`${styles.main} ${additionalClassName}`}>
