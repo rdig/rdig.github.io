@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { ReactNode, FC } from 'react';
 import { MDXProvider } from '@mdx-js/react';
 import { MDXRenderer } from 'gatsby-plugin-mdx';
 
@@ -6,10 +6,11 @@ import Layout from '@components/Layout';
 import Heading from '@components/Heading';
 import DateComponent from '@components/DateComponent';
 import Image from '@components/Image';
+import Paragraph from '@components/Paragraph';
 
 import { SinglePostQuery } from '@graphqlTypes';
 
-import styles from './Post.css';
+import styles from './Post.module.css';
 
 interface HeadingNode {
   children: string;
@@ -26,11 +27,15 @@ interface ImageNode {
   loading: 'eager' | 'lazy' | undefined;
 };
 
+interface ParagraphNode {
+  children: string | ReactNode;
+};
+
 interface Props {
   data: SinglePostQuery;
 };
 
-export default ({ data }: Props) => {
+const Post = ({ data }: Props) => {
   const customComponents = {
     h1: ({ children }: HeadingNode) => (
       <Heading type='h1' content={children} url={data?.mdx?.fields?.slug} />
@@ -43,6 +48,11 @@ export default ({ data }: Props) => {
     ),
     img: (props: ImageNode) => (
       <Image additionalClassName={styles.image} {...props} />
+    ),
+    p: ({ children }: ParagraphNode) => (
+      <Paragraph additionalClassName={styles.paragraph}>
+        {children}
+      </Paragraph>
     ),
   };
   return (
@@ -58,3 +68,5 @@ export default ({ data }: Props) => {
     </Layout>
   );
 };
+
+export default Post as FC<Props>;
