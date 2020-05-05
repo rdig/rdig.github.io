@@ -46,6 +46,7 @@
 
 .main p {
   margin: 0 0 60px 0;
+  line-height: 20px;
   font-size: var(--size-small);
   color: var(--almost-grey);
   text-shadow: var(--shadow-dark);
