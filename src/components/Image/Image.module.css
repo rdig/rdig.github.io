@@ -2,6 +2,14 @@
   border-radius: 10px;
 }
 
-.main {}
+.main {
+  text-align: center;
+}
 
-.imageTitle {}
+.imageTitle {
+  display: inline-block;
+  margin: 4px 0 0;
+  color: var(--almost-grey);
+  font-size: var(--size-small);
+  text-shadow: var(--shadow-dark);
+}
