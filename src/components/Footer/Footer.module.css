@@ -1,5 +1,10 @@
 .main {
+  color: var(--hard-to-see-gray);
   font-family: var(--open-sans);
   font-weight: var(--weight-normal);
-  font-size: var(--size-small);
+  font-size: 13px;
+}
+
+.main p {
+  margin: 6px;
 }

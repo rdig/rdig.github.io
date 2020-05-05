@@ -14,7 +14,8 @@ const defaultProps: DefaultProps = {
 
 const Footer = ({ title }: Props) => (
   <footer className={styles.main}>
-    © {new Date().getFullYear()} {title}
+    <p>Copyright {title} © {new Date().getFullYear()}</p>
+    <p>Published, through various incarnations, since 2007</p>
   </footer>
 );
 
