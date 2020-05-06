@@ -3,6 +3,7 @@ import React from 'react';
 import Layout from '@components/Layout';
 import PostsList from '@components/PostsList';
 import Page from '@components/Page';
+import SectionName from '@components/SectionName';
 
 import { AllPostsQuery } from '@graphqlTypes';
 
@@ -22,6 +23,7 @@ const IndexPage = ({ data }: Props) => {
     <Layout>
       <SEO title='Home' />
       <Page data={{ mdx: { ...latestPost.node }}} />
+      <SectionName name='Other Posts' />
       <PostsList data={restOfPosts} />
     </Layout>
   );
