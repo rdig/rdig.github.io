@@ -8,13 +8,7 @@ import { LINKS } from '@constants';
 import styles from './Footer.module.css';
 
 interface Props {
-  title: string;
-};
-
-type DefaultProps = Readonly<Props>;
-
-const defaultProps: DefaultProps = {
-  title: '',
+  author: string;
 };
 
 const Gatsby = () => (
@@ -39,9 +33,9 @@ const ReleaseNotes = () => (
   </>
 );
 
-const Footer = ({ title }: Props) => (
+const Footer = ({ author = '' }: Props) => (
   <footer className={styles.main}>
-    <p>Copyright {title} © {new Date().getFullYear()}</p>
+    <p>Copyright {author} © {new Date().getFullYear()}</p>
     <p>
       Version {version}.
       <Gatsby />
@@ -50,7 +44,5 @@ const Footer = ({ title }: Props) => (
     </p>
   </footer>
 );
-
-Footer.defaultProps = defaultProps;
 
 export default Footer as FC<Props>;

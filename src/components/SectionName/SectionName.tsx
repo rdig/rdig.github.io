@@ -8,20 +8,12 @@ interface Props {
   name: string;
 };
 
-type DefaultProps = Readonly<Props>;
-
-const defaultProps: DefaultProps = {
-  name: 'Posts',
-};
-
-const SectionName = ({ name }: Props) => (
+const SectionName = ({ name = 'Posts' }: Props) => (
   <Heading
     content={name}
     type='h4'
     additionalClassName={styles.main}
   />
 );
-
-SectionName.defaultProps = defaultProps;
 
 export default SectionName as FC<Props>;

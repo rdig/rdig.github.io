@@ -19,13 +19,14 @@ interface Props {
 const Layout = ({ children }: Props) => {
   const data: SiteTitleQuery = fetchSiteTitle();
   const title = data?.site?.siteMetadata?.title || '';
+  const author = data?.site?.siteMetadata?.author || '';
   return (
     <>
       <MessageBar />
       <div className={styles.main}>
         <Header title={title} />
         <main>{children}</main>
-        <Footer title={title} />
+        <Footer author={author} />
       </div>
     </>
   )

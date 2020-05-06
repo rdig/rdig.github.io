@@ -9,13 +9,7 @@ interface Props {
   title?: string;
 };
 
-type DefaultProps = Readonly<Props>;
-
-const defaultProps: DefaultProps = {
-  title: '',
-};
-
-const Header = ({ title }: Props) => (
+const Header = ({ title = '' }: Props) => (
   <header className={styles.main}>
     <h1><Link to='/'>{title}</Link></h1>
     <ul>
@@ -23,7 +17,5 @@ const Header = ({ title }: Props) => (
     </ul>
   </header>
 );
-
-Header.defaultProps = defaultProps;
 
 export default Header as FC<Props>;
