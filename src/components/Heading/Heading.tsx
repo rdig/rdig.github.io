@@ -15,7 +15,7 @@ const Heading = ({
   type: HeadingElementType = 'h1',
   content,
   url = '#',
-  additionalClassName,
+  additionalClassName = '',
 }: Props) => {
   const className = `${styles.main} ${additionalClassName}`;
   const anchor = slugify(content, {

@@ -8,7 +8,7 @@ interface Props {
   language?: string;
 };
 
-const Code = ({ children, additionalClassName, language }: Props) => (
+const Code = ({ children, additionalClassName = '', language }: Props) => (
   <div className={styles.main}>
     <pre className={`${styles.code} ${additionalClassName}`}>
       {children}

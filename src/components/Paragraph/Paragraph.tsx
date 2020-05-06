@@ -7,7 +7,7 @@ interface Props {
   additionalClassName?: string;
 };
 
-const Paragraph = ({ children, additionalClassName }: Props) => (
+const Paragraph = ({ children, additionalClassName = '' }: Props) => (
   <p className={`${styles.main} ${additionalClassName}`}>{children}</p>
 );
 

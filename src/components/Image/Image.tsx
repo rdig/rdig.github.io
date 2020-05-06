@@ -13,7 +13,7 @@ interface Props {
   additionalClassName?: string;
 };
 
-const Image = ({ alt, title, src, additionalClassName }: Props) => {
+const Image = ({ alt, title, src, additionalClassName = '' }: Props) => {
   const data: AllImagesQuery = fetchImages();
   const imageMatch = useMemo(
     () => data.allImageSharp.edges.find(
