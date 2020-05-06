@@ -1,0 +1,8 @@
+.main {
+  text-decoration: none;
+  color: var(--almost-white);
+}
+
+.main:hover {
+  color: var(--generalissmo-blue);
+}
