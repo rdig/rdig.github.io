@@ -2,6 +2,7 @@ import React from 'react';
 
 import Layout from '@components/Layout';
 import PostsList from '@components/PostsList';
+import Page from '@components/Page';
 
 import { AllPostsQuery } from '@graphqlTypes';
 
@@ -14,11 +15,16 @@ interface Props {
   data: AllPostsQuery;
 };
 
-const IndexPage = ({ data }: Props) => (
+const IndexPage = ({ data }: Props) => {
+  const latestPost = data?.allMdx?.edges[0] ?? { node: {}};
+  const restOfPosts = { allMdx: { edges: [...data?.allMdx?.edges.slice(1)]}};
+  return (
     <Layout>
       <SEO title='Home' />
-      <PostsList data={data} />
+      <Page data={{ mdx: { ...latestPost.node }}} />
+      <PostsList data={restOfPosts} />
     </Layout>
   );
+};
 
 export default IndexPage;
