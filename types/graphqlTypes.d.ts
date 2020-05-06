@@ -3377,7 +3377,7 @@ export type AllPostsQueryVariables = {};
 
 
 export type AllPostsQuery = { allMdx: { edges: Array<{ node: (
-        Pick<Mdx, 'id' | 'excerpt'>
+        Pick<Mdx, 'id' | 'body' | 'excerpt'>
         & { fields?: Maybe<Pick<MdxFields, 'slug' | 'date' | 'title'>> }
       ) }> } };
 
