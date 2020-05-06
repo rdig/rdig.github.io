@@ -2,10 +2,20 @@
 
 .main {
   margin: 0 0 80px 0;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+}
+
+@media (medium) {
+  .main {
+    flex-direction: row;
+  }
 }
 
 .main h1 {
   display: block;
+  flex: 0 0 auto;
   margin: 0;
   font-size: 20px;
   font-weight: var(--weight-light);
@@ -27,7 +37,7 @@
 }
 
 .main h1 a:hover {
-  color: var(--generalissimo-blue);
+  opacity: 0.7;
 }
 
 @media (medium) {
@@ -37,7 +47,7 @@
 }
 
 .main ul {
-  display: block;
+  flex: 0 0 auto;
   margin: 0 0 0 -10px;
   padding: 0;
 }

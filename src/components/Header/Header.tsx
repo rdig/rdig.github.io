@@ -19,8 +19,7 @@ const Header = ({ title }: Props) => (
   <header className={styles.main}>
     <h1><Link to='/'>{title}</Link></h1>
     <ul>
-      <li><Link to={ROUTES.ABOUT}>About</Link></li>
-      <li><Link to={ROUTES.RESUME}>Resume</Link></li>
+      <li><Link to={ROUTES.ABOUT}>About Me</Link></li>
     </ul>
   </header>
 );

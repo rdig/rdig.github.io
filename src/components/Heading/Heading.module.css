@@ -2,6 +2,7 @@
 
 h1.main, h2.main, h3.main, h4.main {
   margin: 0;
+  text-shadow: var(--shadow-dark);
 }
 
 h1.main a, h2.main a, h3.main a, h4.main a {
