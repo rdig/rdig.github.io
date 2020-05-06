@@ -8,3 +8,12 @@
 .main p {
   margin: 6px;
 }
+
+.main a {
+  color: var(--hard-to-see-gray);
+  text-decoration: none;
+}
+
+.main a:hover {
+  color: var(--almost-grey);
+}
