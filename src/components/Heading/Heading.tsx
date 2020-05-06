@@ -8,26 +8,29 @@ interface Props {
   type: 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6';
   content: string;
   url?: string | null;
+  additionalClassName?: string;
 };
 
 const Heading = ({
   type: HeadingElementType = 'h1',
   content,
   url = '#',
+  additionalClassName,
 }: Props) => {
+  const className = `${styles.main} ${additionalClassName}`;
   const anchor = slugify(content, {
     lower: true,
     strict: true,
   });
   if (HeadingElementType === 'h1') {
     return (
-      <HeadingElementType className={styles.main}>
+      <HeadingElementType className={className}>
         <Link to={`${url}`}>{content}</Link>
       </HeadingElementType>
     );
   }
   return (
-    <HeadingElementType className={styles.main}>
+    <HeadingElementType className={className}>
       <a id={anchor} href={`#${anchor}`}>{content}</a>
     </HeadingElementType>
   );
