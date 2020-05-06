@@ -18,13 +18,17 @@ interface Props {
 
 const IndexPage = ({ data }: Props) => {
   const latestPost = data?.allMdx?.edges[0] ?? { node: {}};
-  const restOfPosts = { allMdx: { edges: [...data?.allMdx?.edges.slice(1)]}};
+  const restOfPosts = data?.allMdx?.edges.slice(1);
   return (
     <Layout>
       <SEO title='Home' />
       <Page data={{ mdx: { ...latestPost.node }}} />
-      <SectionName name='Other Posts' />
-      <PostsList data={restOfPosts} />
+      {!!restOfPosts?.length && (
+        <>
+          <SectionName name='Other Posts' />
+          <PostsList data={{ allMdx: { edges: [...restOfPosts] }}} />
+        </>
+      )}
     </Layout>
   );
 };
