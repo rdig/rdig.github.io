@@ -1,9 +1,14 @@
-import { graphql } from 'gatsby';
-
 /**
  * This file is still needed since it's the entry point for Gatbsy
 */
-export { default } from './Index';
+import { graphql } from 'gatsby';
+
+/**
+ * This whole unpleasentness is needed since gatsby doesn't support
+ * export { default } from ...
+*/
+import Index from './Index';
+export default Index;
 
 export const pageQuery = graphql`
   query AllPosts {

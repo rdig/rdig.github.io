@@ -1,6 +1,11 @@
 import { graphql } from 'gatsby';
 
-export { default } from './Post';
+/**
+ * This whole unpleasentness is needed since gatsby doesn't support
+ * export { default } from ...
+*/
+import Post from './Post';
+export default Post;
 
 /**
  * Query needs to be placed in the index, since this is where Gatsby is expecting
