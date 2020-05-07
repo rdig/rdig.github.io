@@ -53,7 +53,6 @@
     "@types/mdx-js__react": "^1.5.1",
     "dateformat": "^3.0.3",
     "gatsby-plugin-alias-imports": "^1.0.5",
-    "gatsby-transformer-typescript-css-modules": "^1.0.14",
     "markdown-extractor": "^1.0.1",
     "slugify": "^1.4.0"
   }

@@ -3,6 +3,7 @@ module.exports = {
     title: `Raul Glogoveţan`,
     description: `Personal Website`,
     author: `Raul Glogoveţan`,
+    siteUrl: `https://glogovetan.com`,
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
@@ -90,6 +91,8 @@ module.exports = {
         ]
       }
     },
-    'gatsby-transformer-typescript-css-modules',
+    {
+      resolve: `gatsby-plugin-sitemap`,
+    },
   ],
 }
