@@ -4,7 +4,7 @@ import dateFormat from 'dateformat';
 
 import DateComponent from '@components/DateComponent';
 
-import styles from './PostsListItem.css';
+import styles from './PostsListItem.module.css';
 
 interface PostExcerpt {
   fields?: {

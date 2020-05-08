@@ -4,7 +4,7 @@ import PostsListItem from './PostsListItem';
 
 import { AllPostsQuery } from '@graphqlTypes';
 
-import styles from './PostsList.css';
+import styles from './PostsList.module.css';
 
 interface Props {
   data: AllPostsQuery;
