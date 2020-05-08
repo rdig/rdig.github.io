@@ -2,17 +2,15 @@
   "name": "rdig.github.io",
   "private": true,
   "description": "Personal website, powered by Gatsby, hosted by Github",
-  "version": "3.0.0-alpha",
+  "version": "3.0.0-alpha.0",
   "author": "Raul Glogovtan <raul@glogovetan.com>",
-  "devDependencies": {
+  "dependencies": {
     "@mdx-js/mdx": "^1.5.8",
     "@mdx-js/react": "^1.6.0",
-    "@types/babel__core": "^7.1.7",
-    "@types/node": "^13.13.1",
-    "@types/react": "^16.9.34",
-    "@types/react-dom": "^16.9.6",
+    "dateformat": "^3.0.3",
     "gatsby": "^2.19.45",
     "gatsby-image": "^2.2.44",
+    "gatsby-plugin-alias-imports": "^1.0.5",
     "gatsby-plugin-graphql-codegen": "^2.7.1",
     "gatsby-plugin-manifest": "^2.2.48",
     "gatsby-plugin-mdx": "^1.1.4",
@@ -24,11 +22,21 @@
     "gatsby-remark-vscode": "^2.0.3",
     "gatsby-source-filesystem": "^2.1.56",
     "gatsby-transformer-sharp": "^2.3.19",
-    "gh-pages": "^2.2.0",
-    "prettier": "^1.19.1",
+    "markdown-extractor": "^1.0.1",
     "react": "^16.12.0",
     "react-dom": "^16.12.0",
     "react-helmet": "^5.2.1",
+    "slugify": "^1.4.0"
+  },
+  "devDependencies": {
+    "@types/babel__core": "^7.1.7",
+    "@types/node": "^13.13.1",
+    "@types/react": "^16.9.34",
+    "@types/react-dom": "^16.9.6",
+    "@types/dateformat": "^3.0.1",
+    "@types/mdx-js__react": "^1.5.1",
+    "gh-pages": "^2.2.0",
+    "prettier": "^1.19.1",
     "typescript": "^3.8.3"
   },
   "license": "MIT",
@@ -47,13 +55,5 @@
   },
   "bugs": {
     "url": "https://github.com/rdig/rdig.github.io/issues"
-  },
-  "dependencies": {
-    "@types/dateformat": "^3.0.1",
-    "@types/mdx-js__react": "^1.5.1",
-    "dateformat": "^3.0.3",
-    "gatsby-plugin-alias-imports": "^1.0.5",
-    "markdown-extractor": "^1.0.1",
-    "slugify": "^1.4.0"
   }
 }
