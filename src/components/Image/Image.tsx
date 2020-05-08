@@ -1,6 +1,5 @@
 import React, { FC, useMemo } from 'react';
-import GatsbyImage, { FluidObject, FixedObject } from "gatsby-image"
-import { Link } from 'gatsby';
+import GatsbyImage, { FluidObject } from "gatsby-image"
 
 import { fetchImages, AllImagesQuery } from './queries';
 
