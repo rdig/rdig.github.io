@@ -104,6 +104,9 @@ const gatsbyConfig = {
         serialize: sitemapPriorities,
       },
     },
+    {
+      resolve: `gatsby-plugin-robots-txt`,
+    },
   ],
 };
 
