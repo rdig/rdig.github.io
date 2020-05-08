@@ -8,7 +8,10 @@ interface Props {
   additionalClassName?: string;
 };
 
-const DateComponent = ({ date, additionalClassName = '' }: Props) => {
+const DateComponent = ({
+  date = new Date(),
+  additionalClassName = '',
+}: Props) => {
   return (
     <span className={`${styles.main} ${additionalClassName}`}>
       {dateFormat(new Date(date), 'mmmm dS, yyyy')}
