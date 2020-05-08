@@ -1,6 +1,5 @@
 import React, { FC } from 'react';
 import { Link } from 'gatsby';
-import dateFormat from 'dateformat';
 
 import DateComponent from '@components/DateComponent';
 
