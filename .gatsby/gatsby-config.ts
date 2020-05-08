@@ -1,4 +1,6 @@
-module.exports = {
+import sitemapPriorities from './sitemap-priorities';
+
+const gatsbyConfig = {
   siteMetadata: {
     title: `Raul Glogoveţan`,
     description: `Personal Website`,
@@ -68,7 +70,6 @@ module.exports = {
         fileName: `./types/graphqlTypes.d.ts`,
         codegen: true,
         codegenDelay: 200,
-        // alwaysCheck: false,
       }
     },
     {
@@ -91,8 +92,19 @@ module.exports = {
         ]
       }
     },
-    // {
-    //   resolve: `gatsby-plugin-sitemap`,
-    // },
+    {
+      resolve: `gatsby-plugin-sitemap`,
+      options: {
+        exclude: [
+          `/Index/`,
+          `/Index/Index`,
+          `/Post/`,
+          `/Post/Post/`,
+        ],
+        serialize: sitemapPriorities,
+      },
+    },
   ],
-}
+};
+
+export default gatsbyConfig;

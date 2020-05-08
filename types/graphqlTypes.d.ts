@@ -2903,6 +2903,7 @@ export type SitePageFieldsEnum =
   | 'pluginCreator___pluginOptions___alias____styles'
   | 'pluginCreator___pluginOptions___alias____utils'
   | 'pluginCreator___pluginOptions___alias____constants'
+  | 'pluginCreator___pluginOptions___exclude'
   | 'pluginCreator___pluginOptions___projectRoot'
   | 'pluginCreator___pluginOptions___configDir'
   | 'pluginCreator___pluginOptions___pathCheck'
@@ -3112,6 +3113,7 @@ export type SitePluginFieldsEnum =
   | 'pluginOptions___alias____styles'
   | 'pluginOptions___alias____utils'
   | 'pluginOptions___alias____constants'
+  | 'pluginOptions___exclude'
   | 'pluginOptions___projectRoot'
   | 'pluginOptions___configDir'
   | 'pluginOptions___pathCheck'
@@ -3242,6 +3244,7 @@ export type SitePluginPluginOptions = {
   codegen?: Maybe<Scalars['Boolean']>;
   codegenDelay?: Maybe<Scalars['Int']>;
   alias?: Maybe<SitePluginPluginOptionsAlias>;
+  exclude?: Maybe<Array<Maybe<Scalars['String']>>>;
   projectRoot?: Maybe<Scalars['String']>;
   configDir?: Maybe<Scalars['String']>;
   pathCheck?: Maybe<Scalars['Boolean']>;
@@ -3279,6 +3282,7 @@ export type SitePluginPluginOptionsFilterInput = {
   codegen?: Maybe<BooleanQueryOperatorInput>;
   codegenDelay?: Maybe<IntQueryOperatorInput>;
   alias?: Maybe<SitePluginPluginOptionsAliasFilterInput>;
+  exclude?: Maybe<StringQueryOperatorInput>;
   projectRoot?: Maybe<StringQueryOperatorInput>;
   configDir?: Maybe<StringQueryOperatorInput>;
   pathCheck?: Maybe<BooleanQueryOperatorInput>;
