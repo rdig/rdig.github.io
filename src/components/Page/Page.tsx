@@ -69,16 +69,31 @@ const Page = ({ data }: Props) => {
       </Code>
     ),
   };
-  return (
-    <article className={styles.main}>
-      <DateComponent date={data?.mdx?.fields?.date} />
-      <MDXProvider components={customComponents}>
-        <MDXRenderer>
-          {data?.mdx?.body ?? ''}
-        </MDXRenderer>
-      </MDXProvider>
-    </article>
-  );
+  /**
+   * @NOTE Always check we have something to render inside MSXRenderer
+   *
+   * There's two things at play here:
+   *
+   * 1. MDXRenderer expects a react portal, and falling back to one is kind
+   * of inconvenient
+   *
+   * 2. When building the actual static site (ie: npm run build), there's a pass
+   * through here with no actual data, which, without this check, would make
+   * the whole build fail
+   */
+  if (data?.mdx?.body) {
+    return (
+      <article className={styles.main}>
+        <DateComponent date={data?.mdx?.fields?.date} />
+        <MDXProvider components={customComponents}>
+          <MDXRenderer>
+            {data?.mdx?.body}
+          </MDXRenderer>
+        </MDXProvider>
+      </article>
+    );
+  }
+  return null;
 };
 
 export default Page as FC<Props>;
