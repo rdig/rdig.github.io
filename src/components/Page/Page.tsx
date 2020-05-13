@@ -7,6 +7,7 @@ import DateComponent from '@components/DateComponent';
 import Image from '@components/Image';
 import Paragraph from '@components/Paragraph';
 import Code from '@components/Code';
+import Anchor from '@components/Anchor';
 
 import { SinglePostQuery } from '@graphqlTypes';
 
@@ -62,6 +63,11 @@ const Page = ({ data }: Props) => {
       <Paragraph additionalClassName={styles.paragraph}>
         {children}
       </Paragraph>
+    ),
+    a: ({ href, children }: any) => (
+      <Anchor to={href}>
+        {children}
+      </Anchor>
     ),
     pre: ({ className, children }: CodeNode) => (
       <Code additionalClassName={`${styles.code} ${className}`}>
