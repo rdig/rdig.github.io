@@ -5,34 +5,35 @@ import DateComponent from '@components/DateComponent';
 
 import styles from './PostsListItem.module.css';
 
-interface PostExcerpt {
-  fields?: {
-    title?: string;
-    date?: string;
-    slug?: string;
-  };
+interface PostFields {
+  title?: string | null;
+  date?: string | null;
+  slug?: string | null;
+};
+
+interface Post {
+  fields?: PostFields | null;
   excerpt?: string;
 };
 
 interface Props {
-  post?: PostExcerpt;
+  post?: Post;
 };
 
-const PostsListItem = ({
-  post: {
-    fields: {
-      title,
-      date,
-      slug,
-    },
-    excerpt,
-}}: any) => (
+const PostsListItem = ({ post }: Props) => (
   <li className={styles.main}>
     <div className={styles.title}>
-      <h2><Link to={slug}>{title}</Link></h2>
-      <DateComponent date={date} additionalClassName={styles.date} />
+      <h2>
+        <Link to={post?.fields?.slug ?? '/'}>
+          {post?.fields?.title}
+        </Link>
+      </h2>
+      <DateComponent
+        date={post?.fields?.date}
+        additionalClassName={styles.date}
+      />
     </div>
-    <p>{excerpt}</p>
+    <p>{post?.excerpt}</p>
   </li>
 );
 
