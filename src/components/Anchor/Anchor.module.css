@@ -1,9 +1,0 @@
-.main {
-  color: var(--generalissimo-blue);
-  text-decoration: none;
-}
-
-.main:hover {
-  text-decoration: underline;
-  color: var(--generalissimo-blue);
-}

@@ -1,9 +1,0 @@
-.main {
-  margin: 0;
-  padding: 0;
-  font-family: var(--open-sans);
-  font-weight: var(--weight-normal);
-  font-size: var(--size-small);
-  color: var(--somewhat-grey);
-  text-shadow: var(--shadow-dark);
-}
