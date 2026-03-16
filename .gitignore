@@ -63,3 +63,8 @@ typings/
 # gatsby related
 .cache
 public
+
+# Claude Code
+CLAUDE.md
+.claude/
+.superpowers/

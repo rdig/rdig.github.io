@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Building a Real-Time Map Interface with WebGL</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,400;0,500;0,700;1,400&family=Source+Code+Pro:wght@400;500&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../style.css">
+</head>
+<body>
+
+<nav class="topbar">
+  <a href="/" class="topbar-name">Raul Glogovetan</a>
+  <div class="topbar-right">
+    <div class="social-icons">
+      <a href="https://github.com/rdig" title="GitHub">
+        <svg viewBox="0 0 24 24"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
+      </a>
+      <a href="https://www.linkedin.com/in/glogovetan" title="LinkedIn">
+        <svg viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+      </a>
+    </div>
+    <button class="theme-btn" onclick="toggleTheme()" title="Toggle theme">
+      <svg class="icon-moon" viewBox="0 0 24 24"><path d="M21.752 15.002A9.718 9.718 0 0112.478 24C6.233 24 1.164 18.931 1.164 12.686a9.718 9.718 0 019.002-9.274c.412-.043.557.435.213.68a7.263 7.263 0 00-2.87 5.794 7.312 7.312 0 007.312 7.312 7.263 7.263 0 005.794-2.87c.245-.344.723-.199.68.213a9.87 9.87 0 01.457 1.461z"/></svg>
+      <svg class="icon-sun" viewBox="0 0 24 24"><path d="M12 17.5a5.5 5.5 0 100-11 5.5 5.5 0 000 11zm0-13V1m0 22v-3.5M4.22 4.22l2.475 2.475m10.61 10.61l2.475 2.475M1 12h3.5M19.5 12H23M4.22 19.78l2.475-2.475M17.305 6.695l2.475-2.475" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+    </button>
+  </div>
+</nav>
+
+<article class="article">
+  <div class="article-hero">
+    <img src="https://avatars.slack-edge.com/2025-05-14/8891273522918_30c38bf627ac73075db6_512.png" alt="Article logo">
+  </div>
+
+  <h1>Building a Real-Time Map Interface with WebGL</h1>
+  <div class="article-meta">March 15, 2026</div>
+
+  <p>There's something deeply satisfying about watching objects move across a map in real time. Not the janky, marker-hopping kind of movement you get from polling an API every few seconds, but smooth, interpolated motion that feels like you're watching a live feed.</p>
+
+  <p>I've been building exactly this — a <a href="#">Command & Conquer-inspired interface</a> that renders hundreds of units on a WebGL map layer. The project started as a weekend experiment and turned into a deep dive through rendering pipelines, coordinate systems, and the surprisingly tricky math of making things look right on a sphere.</p>
+
+  <p>Here's what I've learned along the way.</p>
+
+  <h2>The Rendering Stack</h2>
+
+  <p>Early on I tried to do everything in a single renderer. That was a mistake. Each rendering technology has a sweet spot, and the real insight was <strong>layering them</strong> so each handles what it does best:</p>
+
+  <ul>
+    <li><strong>Mapbox GL</strong> — base map tiles, camera control, and projection</li>
+    <li><strong>deck.gl</strong> — geospatial WebGL overlays (unit models, rally lines, labels)</li>
+    <li><strong>PixiJS</strong> — 2D sprite rendering and effects (selection circles, fog of war)</li>
+    <li><strong>Vue.js</strong> — UI chrome (sidebar, settings panel, HUD stats)</li>
+  </ul>
+
+  <p>The stack renders bottom-to-top: Mapbox draws the map, deck.gl composites its WebGL layers on top via a <code>MapboxOverlay</code>, PixiJS sits on a transparent canvas above that, and Vue's HTML elements float over everything.</p>
+
+  <blockquote>
+    <p>The trick isn't picking the best renderer — it's knowing which layer each feature belongs on. A selection circle needs to track a geo-coordinate and survive map tilting, so it goes on deck.gl. A fog of war effect is pure 2D masking, so it goes on PixiJS.</p>
+  </blockquote>
+
+  <h2>Client-Side Interpolation</h2>
+
+  <p>The server runs a simulation loop at 20Hz — every 50ms it ticks the world forward, updating positions, headings, and altitudes. But we need 60fps on the client for smooth visuals. Displaying raw server updates would look choppy.</p>
+
+  <p>The solution is <strong>client-side interpolation</strong>. Each frame, we lerp between the last known position and the predicted next position:</p>
+
+  <pre><code>function lerpPos(
+  a: Position,
+  b: Position,
+  t: number
+): Position {
+  return {
+    lat: a.lat + (b.lat - a.lat) * t,
+    lon: a.lon + (b.lon - a.lon) * t,
+    alt: a.alt + (b.alt - a.alt) * t,
+  };
+}</code></pre>
+
+  <p>The <code>t</code> parameter represents progress between two server snapshots, clamped to <code>[0, 1]</code> to prevent overshooting when a network update is delayed.</p>
+
+  <h3>Heading Interpolation</h3>
+
+  <p>Position lerp is straightforward — latitude and longitude are continuous values. But heading requires special care. If a vehicle's heading changes from 350° to 10°, naive interpolation would sweep 340° the wrong way around.</p>
+
+  <p>You need to find the shortest arc:</p>
+
+  <pre><code>function shortestAngleDiff(from: number, to: number): number {
+  const diff = ((to - from + 180) % 360) - 180;
+  return diff < -180 ? diff + 360 : diff;
+}
+
+// Usage in the interpolation loop
+const headingDelta = shortestAngleDiff(prev.heading, next.heading);
+const heading = prev.heading + headingDelta * t;</code></pre>
+
+  <p>This tiny function saved me hours of debugging vehicles that would randomly spin full circles during course corrections.</p>
+
+  <h2>The Fog of War</h2>
+
+  <p>This is where PixiJS earns its place in the stack. The fog of war system uses an <strong>inverse-mask approach</strong>: a full-screen dark overlay with holes punched where vehicles have been.</p>
+
+  <p>The implementation has two components:</p>
+
+  <ol>
+    <li><strong>Live stamps</strong> — radial gradient circles rendered at each vehicle's current screen position, every frame</li>
+    <li><strong>Trail texture</strong> — a persistent <code>RenderTexture</code> that accumulates all previous stamps, creating a permanent record of explored terrain</li>
+  </ol>
+
+  <p>Each frame, we render the trail texture plus live stamps into a mask, then apply that mask inversely to a dark overlay. Areas that have been "seen" become transparent, revealing the map beneath.</p>
+
+  <pre><code>// Stamp a radial gradient at each vehicle's position
+for (const unit of units) {
+  const screen = map.project([unit.lon, unit.lat]);
+  stamp.position.set(screen.x, screen.y);
+  stamp.scale.set(revealRadius / baseSize);
+
+  // Accumulate into the persistent trail
+  renderer.render(stamp, { renderTexture: trailTexture, clear: false });
+}</code></pre>
+
+  <p>The visual effect is striking — as your units sweep across the map, they leave behind a permanent trace of everywhere they've been, while unexplored territory stays shrouded.</p>
+
+  <h2>Input Handling</h2>
+
+  <p>Getting input right in a multi-layer rendering stack is surprisingly fiddly. Click events need to be routed to the correct layer, drag operations need thresholds to distinguish from clicks, and the default Mapbox interactions need to be replaced with custom controls.</p>
+
+  <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=680&h=320&fit=crop" alt="Dashboard interface showing data visualization">
+
+  <h3>The Right-Click Pan Problem</h3>
+
+  <p>I wanted RTS-style controls: right-click to pan, middle-click to tilt and rotate. Mapbox's default is left-click drag to pan, which conflicts with unit selection. Disabling default controls and reimplementing them meant dealing with Mapbox's internal event system:</p>
+
+  <pre><code>// Disable defaults
+map.dragPan.disable();
+map.dragRotate.disable();
+map.doubleClickZoom.disable();
+
+// Re-implement with right mouse button
+map.on('mousedown', (e) => {
+  if (e.originalEvent.button === 2) {
+    startPan(e);
+  } else if (e.originalEvent.button === 1) {
+    startTiltRotate(e);
+  }
+});</code></pre>
+
+  <h3>Drag-Select vs Click</h3>
+
+  <p>A 5-pixel movement threshold distinguishes clicks from drag-selects. Below the threshold, it's a click (select single unit or deselect). Above it, it's a rubber-band selection. A <code>wasDrag</code> flag prevents deck.gl from processing a click event after a drag-select completes.</p>
+
+  <hr>
+
+  <h2>What I'd Do Differently</h2>
+
+  <p>If I were starting over, I'd invest more time upfront in a <strong>coordinate abstraction layer</strong>. Right now, different parts of the codebase work with different representations — <code>{lat, lon}</code> objects, <code>[lon, lat]</code> arrays (GeoJSON convention), <code>{x, y}</code> screen coordinates — and the conversions between them are a source of subtle bugs.</p>
+
+  <p>I'd also think harder about <strong>state ownership</strong>. The client currently polls the server and interpolates locally, which works but creates ambiguity about which side owns the "truth" during transitions. A more explicit state synchronization protocol would be cleaner.</p>
+
+  <p>But those are refinements. The core architecture — layered renderers, each doing what they're best at — has held up well. And watching a fleet of vehicles sweep across the map with fog of war lifting in their wake still makes me grin every time.</p>
+</article>
+
+<script>
+  function toggleTheme() {
+    const html = document.documentElement;
+    const current = html.getAttribute('data-theme');
+    html.setAttribute('data-theme', current === 'dark' ? 'light' : 'dark');
+  }
+</script>
+</body>
+</html>
