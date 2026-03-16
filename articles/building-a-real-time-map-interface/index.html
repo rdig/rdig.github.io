@@ -12,7 +12,7 @@
 <body>
 
 <nav class="topbar">
-  <a href="/" class="topbar-name">Raul Glogovetan</a>
+  <a href="#" class="topbar-name">Raul Glogovetan</a>
   <div class="topbar-right">
     <div class="social-icons">
       <a href="https://github.com/rdig" title="GitHub" target="_blank" rel="noopener">
@@ -165,7 +165,8 @@ map.on('mousedown', (e) => {
   function toggleTheme() {
     const html = document.documentElement;
     const current = html.getAttribute('data-theme');
-    html.setAttribute('data-theme', current === 'dark' ? 'light' : 'dark');
+    const isDark = current === 'dark' || (!current && !window.matchMedia('(prefers-color-scheme: light)').matches);
+    html.setAttribute('data-theme', isDark ? 'light' : 'dark');
   }
 </script>
 </body>
